@@ -20,30 +20,17 @@ class Calculator
             // проверяем коректность ввода нужной операции
 
             bool resultinput = int.TryParse(Console.ReadLine(), out int result);
-            if (resultinput == false)
+            while (!resultinput || result <= 0 || result >= 6)
             {
-                while (!resultinput || result <= 0 || result >= 6)
-                {
                     Console.Write("Данные некорретны. Введите числовое значение от 1 до 5: ");
                     resultinput = int.TryParse(Console.ReadLine(), out result);
-                }
             }
-            else
-            {
-                while (!resultinput || result <= 0 || result >= 6)
-                {
-                    Console.Write("Данные некорретны. Введите число от 1 до 5: ");
-                    resultinput = int.TryParse(Console.ReadLine(), out result);
-                }
-            }
-
-                if (result == 5)
+            
+            if (result == 5)
                 {
                     return;
                 }
             
-
-
             // Получаем от пользователя первое число
 
             bool firstinput = false, secondinput = false;
